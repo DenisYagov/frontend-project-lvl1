@@ -6,5 +6,6 @@ jobs:
     steps:
       - run: echo 'test started'
       - run: cd ..
+      - run: ls
       - run: make lint
 
