@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'test started'
-      - run: npx eslint .
+      - run: make lint
 
