@@ -1,26 +1,12 @@
-plugins:
-  # https://github.com/jest-community/eslint-plugin-jest
-  - jest
-
 env:
   node: true
 
 extends:
   - 'airbnb-base'
-  - 'plugin:react/recommended'
-  - 'plugin:jest/recommended'
 
 
 parserOptions:
   ecmaVersion: latest
-
-settings:
-    'react': {
-      'flowVersion': latest // Flow version
-    }
-    'jest': {
-      'version': 27
-    }
 
 rules:
   no-console: 0
