@@ -1,10 +1,26 @@
+# Name of workflow
 name: GitHub Actions Demo
-on: [push]
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+
+env:
+  CI: true
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
+
+    # The type of machine to run the job on
     runs-on: ubuntu-latest
+
+    strategy:
+      # Node versions list
+      matrix:
+        node-version: [14.x]
+
     steps:
-            # Check-out repository under GitHub workspace
+        # Check-out repository under GitHub workspace
         # https://github.com/actions/checkout
       - uses: actions/checkout@v2
         # Step's name
@@ -16,6 +32,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make install 
+      - run: make install
       - run: make lint
-
