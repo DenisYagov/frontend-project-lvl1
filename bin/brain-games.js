@@ -2,6 +2,11 @@
 
 import Greetings from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
+const welcome = () => {
+  console.log('Welcome to the Brain Games!');
+};
 
+welcome();
 Greetings();
+
+export default welcome;
