@@ -8,5 +8,3 @@ const welcome = () => {
 
 welcome();
 Greetings();
-
-export default welcome;
