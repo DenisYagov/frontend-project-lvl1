@@ -4,7 +4,8 @@
 
 ![Github Actions](https://github.com/DenisYagov/frontend-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
-![as-kee-nuh-muh] (https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game1_rec)
+[![asciicast](https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game1_rec)](https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game1_rec)
+
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game2_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game3_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game4_rec
