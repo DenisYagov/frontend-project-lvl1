@@ -11,7 +11,3 @@
 [Game3](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca)
 
 [Game4](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP)
-
-https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game2_rec
-https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game3_rec
-https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game4_rec
