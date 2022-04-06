@@ -8,6 +8,10 @@ brain-calc: #run game 2
 	node bin/brain-calc.js
 brain-gcd: #run game 3
 	node bin/brain-gcd.js
+brain-progression:
+	node bin/brain-progression.js
+brain-prime:
+	node bin/brain-prime.js
 publish: #publication of the packet
 	npm publish --dry-run
 lint:

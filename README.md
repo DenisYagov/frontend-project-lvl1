@@ -11,3 +11,5 @@
 [Game3](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca)
 
 [Game4](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP)
+
+[Game5](https://asciinema.org/a/LxaK2JAS5IE2PY9LjeVL03v0a)
