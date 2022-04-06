@@ -6,6 +6,7 @@
 
 [![asciicast](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)]
 
+https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game2_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game3_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game4_rec
