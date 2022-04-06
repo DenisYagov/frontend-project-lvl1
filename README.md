@@ -4,9 +4,14 @@
 
 ![Github Actions](https://github.com/DenisYagov/frontend-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
-[![asciicast](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)]
+[Game1](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)
 
-https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD
+[Game2](https://asciinema.org/a/I3SrqlwnNG4iwUkYxwhuovNuf)
+
+[Game3](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca)
+
+[Game4](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP)
+
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game2_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game3_rec
 https://github.com/DenisYagov/frontend-project-lvl1/blob/main/game4_rec
