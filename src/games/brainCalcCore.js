@@ -46,7 +46,7 @@ const calcGame = () => {
   if (isSuccessiveCalcGameTurn() === false) flag = 1;
   if (isSuccessiveCalcGameTurn() === false) flag = 1;
   if (isSuccessiveCalcGameTurn() === false) flag = 1;
-  if (flag === 0) console.log(`Congratulations, ${userName}`);
+  if (flag === 0) console.log(`Congratulations, ${userName}!`);
 };
 
 export default calcGame;
