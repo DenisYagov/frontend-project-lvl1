@@ -6,13 +6,13 @@ let userName = 'noname';
 
 const userGreetings = () => {
   userName = readlineSync.question('May I have your name?  ');
-  console.log(`Hello ${userName}`);
+  console.log(`Hello, ${userName}!`);
 };
 
 const isSuccessiveEvenGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxValue);
   let correctAnswer = 'yes';
-  console.log(`question : ${operandA}`);
+  console.log(`Question : ${operandA}`);
   const Answer = readlineSync.question('Answer is : ');
   if ((Answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
   if ((Answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
