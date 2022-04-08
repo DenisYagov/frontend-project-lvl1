@@ -27,7 +27,6 @@ const isSuccessivePrimeGameTurn = () => {
     return true;
   }
   console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${divFind(operandA)}.`);
-  console.log(`Let's try again, ${userName}!`);
   return false;
 };
 
@@ -41,7 +40,7 @@ const primeGame = () => {
       break;
     }
   }
-  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
 };
 
 export default primeGame;

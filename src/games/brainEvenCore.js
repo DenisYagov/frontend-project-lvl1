@@ -18,12 +18,11 @@ const isSuccessiveEvenGameTurn = () => {
   if ((answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
   if (answer.toLowerCase() === 'yes') correctAnswer = 'no';
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  console.log(`Let's try again, ${userName}!`);
   return false;
 };
 
 const evenGame = () => {
-  let isPositiveStatus = true;
+  let isPositiveExit = true;
   console.log('Welcome to the Brain Games!');
   userGreetings();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -34,11 +33,11 @@ const evenGame = () => {
       console.log('Correct!');
     } else {
       i -= 1;
-      isPositiveStatus = false;
+      isPositiveExit = false;
       break;
     }
   }
-  if (isPositiveStatus === true) console.log(`Congratulations, ${userName}!`);
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
 };
 
 export default evenGame;

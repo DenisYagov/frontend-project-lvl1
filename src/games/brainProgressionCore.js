@@ -46,7 +46,7 @@ const progressionGame = () => {
       break;
     }
   }
-  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
 };
 
 export default progressionGame;
