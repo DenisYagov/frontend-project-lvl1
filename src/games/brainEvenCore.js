@@ -13,11 +13,13 @@ const isSuccessiveEvenGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxValue);
   let correctAnswer = 'yes';
   console.log(`Question: ${operandA}`);
-  const Answer = readlineSync.question('Answer is : ');
-  if ((Answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
-  if ((Answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
-  if (Answer.toLowerCase() === 'yes') correctAnswer = 'no';
-  console.log(`'${Answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+  const answer = readlineSync.question('Answer is : ');
+//  if ((answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
+// if ((answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
+  if ((answer.toLowerCase() === 'yes') && ((operandA % 2) !== 0)) return true;
+  if ((answer.toLowerCase() === 'no') && ((operandA % 2) === 0)) return true;
+  if (answer.toLowerCase() === 'yes') correctAnswer = 'no';
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   console.log(`Let's try again, ${userName}`);
   return false;
 };
