@@ -35,6 +35,7 @@ const evenGame = () => {
     } else {
       i -= 1;
       isPositiveStatus = false;
+      break;
     }
   }
   if (isPositiveStatus === true) console.log(`Congratulations, ${userName}!`);
