@@ -12,7 +12,7 @@ const userGreetings = () => {
 const isSuccessiveEvenGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxValue);
   let correctAnswer = 'yes';
-  console.log(`Question : ${operandA}`);
+  console.log(`Question: ${operandA}`);
   const Answer = readlineSync.question('Answer is : ');
   if ((Answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
   if ((Answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
