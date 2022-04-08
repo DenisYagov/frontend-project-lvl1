@@ -25,7 +25,7 @@ const isSuccessiveCalcGameTurn = () => {
   }
   hiddenValue = progression[hiddenItemPosition];
   progression[hiddenItemPosition] = '..';
-  console.log(`Question: ${progression}`);
+  console.log(`Question: ${progression}`.replace(/,/g, ' '));
   const userAnswer = readlineSync.question('Your answer: ');
   if (userAnswer === hiddenValue) {
     console.log('Correct!');
