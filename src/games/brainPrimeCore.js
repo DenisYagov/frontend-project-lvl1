@@ -20,7 +20,7 @@ const divFind = (opA) => {
 
 const isSuccessivePrimeGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxOperandValue);
-  console.log(`Question : ${operandA}`);
+  console.log(`Question: ${operandA}`);
   const userAnswer = readlineSync.question('Answer is : ');
   if (userAnswer.toLowerCase() === divFind(operandA)) {
     console.log('Correct!');
