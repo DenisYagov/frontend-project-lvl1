@@ -39,11 +39,14 @@ const progressionGame = () => {
   userGreetings();
   console.log('What number is missing in the progression?');
 
-  let isGameSuccess = true;
+  let isPositiveExit = true;
   for (let i = 0; i < maxTry; i += 1) {
-    if (isSuccessiveCalcGameTurn() === false) isGameSuccess = false;
+    if (isSuccessiveCalcGameTurn() === false) {
+      isPositiveExit = false;
+      break;
+    }
   }
-  if (isGameSuccess === true) console.log(`Congratulations, ${userName}!`);
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
 };
 
 export default progressionGame;

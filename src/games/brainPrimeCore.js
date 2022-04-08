@@ -13,12 +13,12 @@ const maxTry = 3; // maximum tries
 const divFind = (opA) => {
   const divs = [];
   for (let i = 1; i < opA; i += 1) if (opA % i === 0) divs.push(i);
-  console.log(`${opA} division by ${divs}`);
+  // console.log(`${opA} division by ${divs}`);
   if (divs.length > 1) return 'no';
   return 'yes';
 };
 
-const check = () => {
+const isSuccessivePrimeGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxOperandValue);
   console.log(`Question : ${operandA}`);
   const userAnswer = readlineSync.question('Answer is : ');
@@ -34,9 +34,14 @@ const check = () => {
 const primeGame = () => {
   userGreetings();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-  let flag = 0;
-  for (let i = 0; i < maxTry; i += 1) if (check(userName) === false) flag = 1;
-  if (flag === 0) console.log(`Congratulations, ${userName}!`);
+  let isPositiveExit = true;
+  for (let i = 0; i < maxTry; i += 1) {
+    if (isSuccessivePrimeGameTurn() === false) {
+      isPositiveExit = false;
+      break;
+    }
+  }
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
 };
 
 export default primeGame;

@@ -37,9 +37,14 @@ const isSuccessiveGcdGameTurn = () => {
 const gcdGame = () => {
   userGreetings();
   console.log('Find the greatest common divisor of given numbers.');
-  let flag = 0;
-  for (let i = 0; i < maxTry; i += 1) if (isSuccessiveGcdGameTurn() === false) flag = 1;
-  if (flag === 0) console.log(`Congratulations, ${userName}!`);
+  let isPositiveExit = true;
+  for (let i = 0; i < maxTry; i += 1) {
+    if (isSuccessiveGcdGameTurn() === false) {
+      isPositiveExit = false;
+      break;
+    }
+  }
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
 };
 
 export default gcdGame;

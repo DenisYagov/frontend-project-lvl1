@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
+const maxTry = 3; // maximum tries
 let userName = 'noname';
 
 const userGreetings = () => {
@@ -42,11 +43,14 @@ const isSuccessiveCalcGameTurn = () => {
 const calcGame = () => {
   userGreetings();
   console.log('What is the result of the expression?');
-  let flag = 0;
-  if (isSuccessiveCalcGameTurn() === false) flag = 1;
-  if (isSuccessiveCalcGameTurn() === false) flag = 1;
-  if (isSuccessiveCalcGameTurn() === false) flag = 1;
-  if (flag === 0) console.log(`Congratulations, ${userName}!`);
+  let isPositiveExit = true;
+  for (let i = 0; i < maxTry; i += 1) {
+    if (isSuccessiveCalcGameTurn() === false) {
+      isPositiveExit = false;
+      break;
+    }
+  }
+  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`);
 };
 
 export default calcGame;
