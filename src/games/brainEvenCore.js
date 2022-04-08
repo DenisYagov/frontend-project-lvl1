@@ -23,7 +23,7 @@ const isSuccessiveEvenGameTurn = () => {
 };
 
 const evenGame = () => {
-  let Flag = 0;
+  let isPositiveStatus = true;
   console.log('Welcome to the Brain Games!');
   userGreetings();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -34,10 +34,10 @@ const evenGame = () => {
       console.log('Correct!');
     } else {
       i -= 1;
-      Flag = 1;
+      isPositiveStatus = false;
     }
   }
-  if (Flag === 0) console.log(`Congratulations, ${userName}!`);
+  if (isPositiveStatus === true) console.log(`Congratulations, ${userName}!`);
 };
 
 export default evenGame;
