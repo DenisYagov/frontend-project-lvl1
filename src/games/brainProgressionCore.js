@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
-
-let userName = 'noname';
-
-const userGreetings = () => {
-  userName = readlineSync.question('May I have your name?  ');
-  console.log(`Hello ${userName}`);
-};
+import { userGreetings, userName } from '../cli.js';
 
 const maxStart = 50; // maximum starting progression value
 const maxAdd = 10; // maximum additive progression value

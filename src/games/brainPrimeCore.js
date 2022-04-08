@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
-
-let userName = 'noname';
-
-const userGreetings = () => {
-  userName = readlineSync.question('May I have your name?  ');
-  console.log(`Hello ${userName}`);
-};
+import { userGreetings, userName } from '../cli.js';
 
 const maxOperandValue = 100; // maximum operand value
 const maxTry = 3; // maximum tries

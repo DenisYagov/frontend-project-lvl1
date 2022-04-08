@@ -1,13 +1,8 @@
 import readlineSync from 'readline-sync';
+import { userGreetings, userName } from '../cli.js';
 
 // maximum value
 const maxValue = 100;
-let userName = 'noname';
-
-const userGreetings = () => {
-  userName = readlineSync.question('May I have your name?  ');
-  console.log(`Hello, ${userName}!`);
-};
 
 const isSuccessiveEvenGameTurn = () => {
   const operandA = Math.floor(Math.random() * maxValue);
@@ -23,7 +18,6 @@ const isSuccessiveEvenGameTurn = () => {
 
 const evenGame = () => {
   let isPositiveExit = true;
-  console.log('Welcome to the Brain Games!');
   userGreetings();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let i = 3;

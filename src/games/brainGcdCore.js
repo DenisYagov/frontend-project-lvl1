@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
-
-let userName = 'noname';
-
-const userGreetings = () => {
-  userName = readlineSync.question('May I have your name?  ');
-  console.log(`Hello ${userName}`);
-};
+import { userGreetings, userName } from '../cli.js';
 
 const maxOperandValue = 100; // maximum operand value
 const maxTry = 3; // maximum tries
@@ -30,7 +24,6 @@ const isSuccessiveGcdGameTurn = () => {
     return true;
   }
   console.log(`${Answer} is wrong answer ;(. Correct answer was ${gcdFind(operandA, operandB)}.`);
-  console.log(`Let's try again, ${userName}!`);
   return false;
 };
 
