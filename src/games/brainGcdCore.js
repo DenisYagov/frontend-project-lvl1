@@ -23,7 +23,7 @@ const gcdFind = (operandA, operandB) => {
 const isSuccessiveGcdGameTurn = () => {
   const operandA = 1 + Math.floor(Math.random() * maxOperandValue);
   const operandB = 1 + Math.floor(Math.random() * maxOperandValue);
-  console.log(`Question : ${operandA} ${operandB}`);
+  console.log(`Question: ${operandA} ${operandB}`);
   const Answer = readlineSync.question('Answer is : ');
   if (parseInt(Answer, 10) === gcdFind(operandA, operandB)) {
     console.log('Correct!');
