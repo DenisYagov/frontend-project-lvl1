@@ -16,8 +16,6 @@ const isSuccessiveEvenGameTurn = () => {
   const answer = readlineSync.question('Answer is : ');
   if ((answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
   if ((answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
-  //  if ((answer.toLowerCase() === 'yes') && ((operandA % 2) !== 0)) return true;
-  //  if ((answer.toLowerCase() === 'no') && ((operandA % 2) === 0)) return true;
   if (answer.toLowerCase() === 'yes') correctAnswer = 'no';
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   console.log(`Let's try again, ${userName}`);
