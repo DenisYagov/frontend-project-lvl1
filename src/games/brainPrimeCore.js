@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import { userGreetings, userName } from '../cli.js';
+import { gameProcess } from './gameProcessor.js';
 
 const maxOperandValue = 100; // maximum operand value
-const maxTry = 3; // maximum tries
+const taskStr = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const divFind = (opA) => {
   const divs = [];
@@ -13,7 +13,7 @@ const divFind = (opA) => {
 };
 
 const isSuccessivePrimeGameTurn = () => {
-  const operandA = Math.floor(Math.random() * maxOperandValue);
+  const operandA = 1 + Math.floor(Math.random() * maxOperandValue);
   console.log(`Question: ${operandA}`);
   const userAnswer = readlineSync.question('Answer is : ');
   if (userAnswer.toLowerCase() === divFind(operandA)) {
@@ -25,16 +25,7 @@ const isSuccessivePrimeGameTurn = () => {
 };
 
 const primeGame = () => {
-  userGreetings();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-  let isPositiveExit = true;
-  for (let i = 0; i < maxTry; i += 1) {
-    if (isSuccessivePrimeGameTurn() === false) {
-      isPositiveExit = false;
-      break;
-    }
-  }
-  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
+  gameProcess(isSuccessivePrimeGameTurn, taskStr);
 };
 
 export default primeGame;

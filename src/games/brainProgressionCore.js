@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
-import { userGreetings, userName } from '../cli.js';
+import { gameProcess } from './gameProcessor.js';
 
 const maxStart = 50; // maximum starting progression value
 const maxAdd = 10; // maximum additive progression value
 const maxLen = 10; // maximum progression value
 const minLen = 5; // minimum progression value
-const maxTry = 3; // maximum task number
+const taskStr = 'What number is missing in the progression?';
 
 const isSuccessiveCalcGameTurn = () => {
   const progression = [];
@@ -30,17 +30,7 @@ const isSuccessiveCalcGameTurn = () => {
 };
 
 const progressionGame = () => {
-  userGreetings();
-  console.log('What number is missing in the progression?');
-
-  let isPositiveExit = true;
-  for (let i = 0; i < maxTry; i += 1) {
-    if (isSuccessiveCalcGameTurn() === false) {
-      isPositiveExit = false;
-      break;
-    }
-  }
-  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
+  gameProcess(isSuccessiveCalcGameTurn, taskStr);
 };
 
 export default progressionGame;

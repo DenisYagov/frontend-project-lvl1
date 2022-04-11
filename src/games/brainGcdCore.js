@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import { userGreetings, userName } from '../cli.js';
+import { gameProcess } from './gameProcessor.js';
 
 const maxOperandValue = 100; // maximum operand value
-const maxTry = 3; // maximum tries
+const taskStr = 'Find the greatest common divisor of given numbers.';
 
 const gcdFind = (operandA, operandB) => {
   const divs = [];
@@ -28,16 +28,7 @@ const isSuccessiveGcdGameTurn = () => {
 };
 
 const gcdGame = () => {
-  userGreetings();
-  console.log('Find the greatest common divisor of given numbers.');
-  let isPositiveExit = true;
-  for (let i = 0; i < maxTry; i += 1) {
-    if (isSuccessiveGcdGameTurn() === false) {
-      isPositiveExit = false;
-      break;
-    }
-  }
-  if (isPositiveExit === true) console.log(`Congratulations, ${userName}!`); else console.log(`Let's try again, ${userName}!`);
+  gameProcess(isSuccessiveGcdGameTurn, taskStr);
 };
 
 export default gcdGame;
