@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { gameProcess } from './gameProcessor.js';
+import gameProcess from './gameProcessor.js';
 
 const maxStart = 50; // maximum starting progression value
 const maxAdd = 10; // maximum additive progression value

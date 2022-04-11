@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { gameProcess } from './gameProcessor.js';
+import gameProcess from './gameProcessor.js';
 
 // maximum value
 const maxValue = 100;

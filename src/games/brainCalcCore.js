@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { gameProcess } from './gameProcessor.js';
+import gameProcess from './gameProcessor.js';
 
 const maxOperandValue = 10; // maximum operand value
 const maxOperation = 3; // operation type nomber

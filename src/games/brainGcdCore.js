@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { gameProcess } from './gameProcessor.js';
+import gameProcess from './gameProcessor.js';
 
 const maxOperandValue = 100; // maximum operand value
 const taskStr = 'Find the greatest common divisor of given numbers.';
