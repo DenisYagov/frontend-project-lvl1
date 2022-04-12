@@ -1,41 +1,46 @@
 import readlineSync from 'readline-sync';
-import gameProcess from './gameProcessor.js';
+import { gameProcess, randomGenerator } from '../gameProcessor.js';
 
 const maxOperandValue = 10; // maximum operand value
 const maxOperation = 3; // operation type nomber
-const taskStr = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
 const isSuccessiveCalcGameTurn = () => {
-  const operandA = Math.floor(Math.random() * maxOperandValue);
-  const operandB = Math.floor(Math.random() * maxOperandValue);
-  const Op = Math.floor(Math.random() * maxOperation);
-  let C = '*';
-  switch (Op) {
-    case 0: C = '+';
+  // two operands random generation
+  const operandA = randomGenerator(maxOperandValue);
+  const operandB = randomGenerator(maxOperandValue);
+  // operation between operands random generation
+  const op = randomGenerator(maxOperation);
+  // symbol of operation receiving
+  let charOP = '*';
+  switch (op) {
+    case 0: charOP = '+';
       break;
-    case 1: C = '-';
+    case 1: charOP = '-';
       break;
-    default: C = '*';
+    default: charOP = '*';
   }
-  console.log(`Question: ${operandA} ${C} ${operandB}`);
-  const Answer = readlineSync.question('Answer is : ');
-  switch (Op) {
-    case 0: { if ((operandA + operandB) === parseInt(Answer, 10)) { console.log('Correct!'); return true; }
-      console.log(`${Answer} is wrong answer ;(. Correct answer was ${operandA + operandB}`);
+  // task question generation and input
+  console.log(`Question: ${operandA} ${charOP} ${operandB}`);
+  const userSolution = readlineSync.question('Answer is : ');
+  // checking if the ansewer is correct
+  switch (op) {
+    case 0: { if ((operandA + operandB) === parseInt(userSolution, 10)) { console.log('Correct!'); return true; }
+      console.log(`${userSolution} is wrong answer ;(. Correct answer was ${operandA + operandB}`);
       return false; }
-    case 1: { if ((operandA - operandB) === parseInt(Answer, 10)) { console.log('Correct!'); return true; }
-      console.log(`${Answer} is wrong answer ;(. Correct answer was ${operandA - operandB}`);
+    case 1: { if ((operandA - operandB) === parseInt(userSolution, 10)) { console.log('Correct!'); return true; }
+      console.log(`${userSolution} is wrong answer ;(. Correct answer was ${operandA - operandB}`);
       return false; }
-    case 2: { if ((operandA * operandB) === parseInt(Answer, 10)) { console.log('Correct!'); return true; }
-      console.log(`${Answer} is wrong answer ;(. Correct answer was ${operandA * operandB}`);
+    case 2: { if ((operandA * operandB) === parseInt(userSolution, 10)) { console.log('Correct!'); return true; }
+      console.log(`${userSolution} is wrong answer ;(. Correct answer was ${operandA * operandB}`);
       return false; }
-    default: console.log(`${Answer} is wrong answer ;(. Correct answer was ...`);
+    default: console.log(`${userSolution} is wrong answer ;(. Correct answer was ...`);
       return false;
   }
 };
 
 const calcGame = () => {
-  gameProcess(isSuccessiveCalcGameTurn, taskStr);
+  gameProcess(isSuccessiveCalcGameTurn, rule);
 };
 
 export default calcGame;

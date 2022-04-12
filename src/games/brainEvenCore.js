@@ -1,15 +1,17 @@
 import readlineSync from 'readline-sync';
-import gameProcess from './gameProcessor.js';
+import { gameProcess, randomGenerator } from '../gameProcessor.js';
 
 // maximum value
-const maxValue = 100;
-const taskStr = 'Answer "yes" if the number is even, otherwise answer "no".';
+const maxOperandValue = 100;
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isSuccessiveEvenGameTurn = () => {
-  const operandA = Math.floor(Math.random() * maxValue);
+  // random task generation and dialog with user
+  const operandA = randomGenerator(maxOperandValue);
   let correctAnswer = 'yes';
   console.log(`Question: ${operandA}`);
   const answer = readlineSync.question('Answer is : ');
+  // check if the answer is correct and respond the result
   if ((answer.toLowerCase() === 'yes') && ((operandA % 2) === 0)) return true;
   if ((answer.toLowerCase() === 'no') && ((operandA % 2) !== 0)) return true;
   if (answer.toLowerCase() === 'yes') correctAnswer = 'no';
@@ -18,7 +20,7 @@ const isSuccessiveEvenGameTurn = () => {
 };
 
 const evenGame = () => {
-  gameProcess(isSuccessiveEvenGameTurn, taskStr);
+  gameProcess(isSuccessiveEvenGameTurn, rule);
 };
 
 export default evenGame;
