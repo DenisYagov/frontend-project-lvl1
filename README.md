@@ -7,14 +7,12 @@
 
 ![Github Actions](https://github.com/DenisYagov/frontend-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
-[![asciicast](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD.png)](https://asciinema.org/a/14)
+[![Game1](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD.png)](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)
 
-[Game1](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)
+[![Game2](https://asciinema.org/a/I3SrqlwnNG4iwUkYxwhuovNuf.png)](https://asciinema.org/a/I3SrqlwnNG4iwUkYxwhuovNuf)
 
-[Game2](https://asciinema.org/a/I3SrqlwnNG4iwUkYxwhuovNuf)
+[![Game3](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca.png)](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca)
 
-[Game3](https://asciinema.org/a/dsbsP5iQi77Bkvm39UHNiXGca)
+[![Game4](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP.png)](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP)
 
-[Game4](https://asciinema.org/a/jeuwyMoQqvH8hrwPSkq19a5XP)
-
-[Game5](https://asciinema.org/a/LxaK2JAS5IE2PY9LjeVL03v0a)
+[![Game5](https://asciinema.org/a/LxaK2JAS5IE2PY9LjeVL03v0a.png)](https://asciinema.org/a/LxaK2JAS5IE2PY9LjeVL03v0a)
