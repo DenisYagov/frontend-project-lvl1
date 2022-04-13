@@ -7,6 +7,8 @@
 
 ![Github Actions](https://github.com/DenisYagov/frontend-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
+[![asciicast](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD.png)](https://asciinema.org/a/14)
+
 [Game1](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)
 
 [Game2](https://asciinema.org/a/I3SrqlwnNG4iwUkYxwhuovNuf)
