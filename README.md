@@ -18,7 +18,7 @@ It will short the command to run the game. In this case you can use commands:
  </ul>
 to run the each of the games.
 
-Otherwise, you can use the Make <name of the game>
+Otherwise, you can use the Make ${<}name of the game${>}
 
 Brain-even game:
 [![Game1](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD.png)](https://asciinema.org/a/mxTtRMuqVMpcYczJC2G2JRdbD)
