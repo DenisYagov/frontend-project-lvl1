@@ -1,5 +1,6 @@
-import readlineSync from 'readline-sync';
-import { gameProcess, randomGenerator } from '../gameProcessor.js';
+// import readlineSync from 'readline-sync';
+import gameProcess from '../gameProcessor.js';
+import getRandomNumber from '../utils.js';
 
 const maxOperandValue = 100; // maximum operand value
 const rule = 'Find the greatest common divisor of given numbers.';
@@ -21,24 +22,17 @@ const gcdFind = (operandA, operandB) => {
   return divs[out];
 };
 
-const isSuccessiveGcdGameTurn = () => {
-  // random generation of operands for the task
-  const operandA = 1 + randomGenerator(maxOperandValue);
-  const operandB = 1 + randomGenerator(maxOperandValue);
-  // user dialog
-  console.log(`Question: ${operandA} ${operandB}`);
-  const userSolution = readlineSync.question('Answer is : ');
-  // checking if the task answer is correct and respond
-  if (parseInt(userSolution, 10) === gcdFind(operandA, operandB)) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`${userSolution} is wrong answer ;(. Correct answer was ${gcdFind(operandA, operandB)}.`);
-  return false;
+const taskGcdGameGeneration = () => {
+  const taskAndRespond = [];
+  const operandA = getRandomNumber(1, maxOperandValue);
+  const operandB = getRandomNumber(1, maxOperandValue);
+  taskAndRespond.push(`${operandA} ${operandB}`);
+  taskAndRespond.push(gcdFind(operandA, operandB).toString());
+  return taskAndRespond;
 };
 
 const gcdGame = () => {
-  gameProcess(isSuccessiveGcdGameTurn, rule);
+  gameProcess(taskGcdGameGeneration, rule);
 };
 
 export default gcdGame;

@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { gameProcess, randomGenerator } from '../gameProcessor.js';
+import gameProcess from '../gameProcessor.js';
+import getRandomNumber from '../utils.js';
 
 const maxStart = 50; // maximum starting progression value
 const maxAdd = 10; // maximum additive progression value
@@ -7,37 +7,33 @@ const maxLen = 10; // maximum progression value
 const minLen = 5; // minimum progression value
 const rule = 'What number is missing in the progression?';
 
-const isSuccessiveCalcGameTurn = () => {
-  // random progression building
+const taskCalcGameGeneration = () => {
+  const taskAndRespond = [];
   const progression = [];
-  let hiddenValue = ''; // hidden value to guess
   // random parameters of progression generation
-  const startProgression = randomGenerator(maxStart);
-  const addProgression = randomGenerator(maxAdd);
+  const startProgression = getRandomNumber(0, maxStart);
+  const addProgression = getRandomNumber(0, maxAdd);
+  // console.log(`startProgression = ${startProgression}`);
+  // console.log(`addProgression = ${addProgression}`);
   // length of progeression random generation
-  const lenProgression = minLen + randomGenerator(maxLen - minLen);
+  const lenProgression = getRandomNumber(minLen, maxLen);
   // random position of hidden item in array generation
-  const hiddenItemPosition = randomGenerator(lenProgression);
+  const hiddenItemPosition = getRandomNumber(0, lenProgression);
   // progression array generation
   for (let i = 0; i < lenProgression; i += 1) {
     progression.push((startProgression + i * addProgression).toString());
   }
   // hidden value resceiving and replacing by special symbol
-  hiddenValue = progression[hiddenItemPosition];
+  const hiddenValue = progression[hiddenItemPosition];
   progression[hiddenItemPosition] = '..';
-  // dialog with gamer and result checking
-  console.log(`Question: ${progression}`.replace(/,/g, ' '));
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === hiddenValue) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenValue}.`);
-  return false;
+  // function output array preparations
+  taskAndRespond.push(progression.toString().replace(/,/g, ' '));
+  taskAndRespond.push(hiddenValue);
+  return taskAndRespond;
 };
 
 const progressionGame = () => {
-  gameProcess(isSuccessiveCalcGameTurn, rule);
+  gameProcess(taskCalcGameGeneration, rule);
 };
 
 export default progressionGame;

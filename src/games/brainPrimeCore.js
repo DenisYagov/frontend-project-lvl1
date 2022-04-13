@@ -1,5 +1,6 @@
-import readlineSync from 'readline-sync';
-import { gameProcess, randomGenerator } from '../gameProcessor.js';
+// import readlineSync from 'readline-sync';
+import gameProcess from '../gameProcessor.js';
+import getRandomNumber from '../utils.js';
 
 const maxOperandValue = 100; // maximum operand value
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
@@ -17,22 +18,16 @@ const divFind = (opA) => {
   return 'yes';
 };
 
-const isSuccessivePrimeGameTurn = () => {
-  // random task generation and dialog
-  const operandA = 1 + randomGenerator(maxOperandValue);
-  console.log(`Question: ${operandA}`);
-  const userAnswer = readlineSync.question('Answer is : ');
-  // checking if the answer is correct and result dialog
-  if (userAnswer.toLowerCase() === divFind(operandA)) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${divFind(operandA)}.`);
-  return false;
+const taskPrimeGameGeneration = () => {
+  const taskAndRespond = [];
+  const operandA = getRandomNumber(1, maxOperandValue);
+  taskAndRespond.push(operandA);
+  taskAndRespond.push(divFind(operandA));
+  return taskAndRespond;
 };
 
 const primeGame = () => {
-  gameProcess(isSuccessivePrimeGameTurn, rule);
+  gameProcess(taskPrimeGameGeneration, rule);
 };
 
 export default primeGame;

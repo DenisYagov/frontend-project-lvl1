@@ -2,17 +2,24 @@ import readlineSync from 'readline-sync';
 
 const maxTry = 3; // maximum tries
 
-export const gameProcess = (isSuccessiveGameTurn, rule) => {
+const gameProcess = (taskGeneration, rule) => {
   // initial dialog
   // user greetings and input name
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(rule);
-  // variable for final dialog
+  // let taskAndRespond;
+
   // loop with several tasks
   for (let i = 0; i < maxTry; i += 1) {
-    if (isSuccessiveGameTurn() === false) {
+    const taskAndRespond = taskGeneration();
+    console.log(`Question: ${taskAndRespond[0]}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer.toLowerCase() === taskAndRespond[1].toLowerCase()) {
+      console.log('Correct!');
+    } else {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${taskAndRespond[1]}.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
@@ -21,6 +28,4 @@ export const gameProcess = (isSuccessiveGameTurn, rule) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export const randomGenerator = (max) => Math.floor(Math.random() * max);
-
-// export default gameProcess;
+export default gameProcess;
