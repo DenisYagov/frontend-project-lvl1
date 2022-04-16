@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/DenisYagov/frontend-project-lvl1)
 
 [![Github Actions](https://github.com/DenisYagov/frontend-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg?event=push)] (https://github.com/DenisYagov/frontend-project-lvl1/actions)
-
+ 
 After clonning, please type command: sudo npm link
 It will short the command to run the game. In this case you can use commands:
 <ul>
