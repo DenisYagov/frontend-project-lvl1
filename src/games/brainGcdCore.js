@@ -14,15 +14,18 @@ const gcdFind = (operandA, operandB) => {
     if (operandA % i === 0) divs.push(i);
   }
   // loop to find all all whole reminder in array divs[] and fix the maximum value
-  for (let i = 0; i < divs.length; i += 1) {
-    if (operandB % divs[i] === 0) out = i;
+  for (let i = divs.length - 1; i >= 0; i -= 1) {
+    if (operandB % divs[i] === 0) {
+      out = i;
+      break;
+    }
   }
   // console.log(`divs = ${divs}`);
   // console.log(`out = ${out}`);
   return divs[out];
 };
 
-const taskGcdGameGeneration = () => {
+const taskAndRespondGcdGameGeneration = () => {
   const taskAndRespond = [];
   const operandA = getRandomNumber(1, maxOperandValue);
   const operandB = getRandomNumber(1, maxOperandValue);
@@ -31,8 +34,8 @@ const taskGcdGameGeneration = () => {
   return taskAndRespond;
 };
 
-const gcdGame = () => {
-  gameProcess(taskGcdGameGeneration, rule);
+const playGcdGame = () => {
+  gameProcess(taskAndRespondGcdGameGeneration, rule);
 };
 
-export default gcdGame;
+export default playGcdGame;

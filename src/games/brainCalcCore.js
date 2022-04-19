@@ -3,9 +3,20 @@ import getRandomNumber from '../utils.js';
 
 const maxOperandValue = 10; // maximum operand value
 const maxOperation = 3; // operation type nomber
+const operationType = ['+', '-', '*']; // operation values that correspond to operation number
 const rule = 'What is the result of the expression?';
 
-const taskGcdGameGeneration = () => {
+const respondValueCalculation = (operandA, opType, operandB) => {
+  // respond value string:
+  switch (opType) {
+    case '+': return ((operandA + operandB).toString());
+    case '-': return ((operandA - operandB).toString());
+    // default value '*'
+    default: return ((operandA * operandB).toString());
+  }
+};
+
+const taskAndRespondGcdGameGeneration = () => {
   const taskAndRespond = [];
   // two operands random generation
   const operandA = getRandomNumber(0, maxOperandValue);
@@ -13,22 +24,15 @@ const taskGcdGameGeneration = () => {
   // operation between operands random generation
   const op = getRandomNumber(0, maxOperation);
   // function output preparation
-  switch (op) {
-    case 0: taskAndRespond.push(`${operandA} + ${operandB}`);
-      taskAndRespond.push((operandA + operandB).toString());
-      break;
-    case 1: taskAndRespond.push(`${operandA} - ${operandB}`);
-      taskAndRespond.push((operandA - operandB).toString());
-      break;
-    default: taskAndRespond.push(`${operandA} * ${operandB}`);
-      taskAndRespond.push((operandA * operandB).toString());
-      break;
-  }
+  // task value string:
+  taskAndRespond.push(`${operandA} ${operationType[op]} ${operandB}`);
+  // respond value string:
+  taskAndRespond.push(respondValueCalculation(operandA, operationType[op], operandB));
   return taskAndRespond;
 };
 
-const calcGame = () => {
-  gameProcess(taskGcdGameGeneration, rule);
+const playCalcGame = () => {
+  gameProcess(taskAndRespondGcdGameGeneration, rule);
 };
 
-export default calcGame;
+export default playCalcGame;

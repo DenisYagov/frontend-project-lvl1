@@ -5,20 +5,24 @@ import getRandomNumber from '../utils.js';
 const maxOperandValue = 100;
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const taskEvenGameGeneration = () => {
+// respond function
+const respondGeneration = (operand) => {
+  if ((operand % 2) === 0) {
+    return ('yes');
+  }
+  return ('no');
+};
+
+const taskAndRespondEvenGameGeneration = () => {
   const taskAndRespond = [];
   const operandA = getRandomNumber(0, maxOperandValue);
   taskAndRespond.push(operandA.toString());
-  if ((operandA % 2) === 0) {
-    taskAndRespond.push('yes');
-  } else {
-    taskAndRespond.push('no');
-  }
+  taskAndRespond.push(respondGeneration(operandA));
   return taskAndRespond;
 };
 
-const evenGame = () => {
-  gameProcess(taskEvenGameGeneration, rule);
+const playEvenGame = () => {
+  gameProcess(taskAndRespondEvenGameGeneration, rule);
 };
 
-export default evenGame;
+export default playEvenGame;
