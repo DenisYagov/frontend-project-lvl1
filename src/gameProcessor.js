@@ -13,13 +13,13 @@ const gameProcess = (taskGeneration, rule) => {
 
   // loop with several tasks
   for (let i = 0; i < maxTry; i += 1) {
-    const taskAndRespond = taskGeneration();
-    console.log(`Question: ${taskAndRespond[0]}`);
+    const [task, respond] = taskGeneration();
+    console.log(`Question: ${task}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer.toLowerCase() === taskAndRespond[1].toLowerCase()) {
+    if (userAnswer.toLowerCase() === respond.toLowerCase()) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${taskAndRespond[1]}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${respond}.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
