@@ -1,4 +1,3 @@
-// import readlineSync from 'readline-sync';
 import gameProcess from '../gameProcessor.js';
 import getRandomNumber from '../utils.js';
 
@@ -8,8 +7,10 @@ const rule = 'Find the greatest common divisor of given numbers.';
 const gcdFind = (operandA, operandB) => {
   // array of divisions with whole reminder of first operand
   // loop to find all whole reminder for operandA and operandB
-  for (let i = operandA - 1; i > 0; i -= 1) {
-    if ((operandA % i === 0) && (operandB % i === 0)) return i;
+  for (let i = Math.min(operandA, operandB) - 1; i > 0; i -= 1) {
+    if ((operandA % i === 0) && (operandB % i === 0)) {
+      return i;
+    }
   }
   return 1;
 };

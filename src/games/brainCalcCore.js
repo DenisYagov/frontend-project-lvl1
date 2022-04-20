@@ -15,8 +15,7 @@ const respondValueCalculation = (operandA, opType, operandB) => {
       return ((operandA - operandB).toString());
     case '*':
       return ((operandA * operandB).toString());
-    default: console.log('unexpected situation Error. Please check BrainCalcCore.js');
-      return -1;
+    default: throw new Error('unexpected situation Error. Please check BrainCalcCore.js');
   }
 };
 
@@ -25,7 +24,7 @@ const taskAndRespondCalcGameGeneration = () => {
   const operandA = getRandomNumber(0, maxOperandValue);
   const operandB = getRandomNumber(0, maxOperandValue);
   // operation between operands random generation
-  const op = getRandomNumber(0, maxOperation);
+  const op = getRandomNumber(0, maxOperation - 1);
   // function output preparation
   // task value string:
   const task = `${operandA} ${operationType[op]} ${operandB}`;

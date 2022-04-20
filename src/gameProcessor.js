@@ -9,7 +9,6 @@ const gameProcess = (taskGeneration, rule) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(rule);
-  // let taskAndRespond;
 
   // loop with several tasks
   for (let i = 0; i < maxTry; i += 1) {
