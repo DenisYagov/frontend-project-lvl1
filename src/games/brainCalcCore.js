@@ -11,8 +11,9 @@ const respondValueCalculation = (operandA, opType, operandB) => {
   switch (opType) {
     case '+': return ((operandA + operandB).toString());
     case '-': return ((operandA - operandB).toString());
-    // default value '*'
-    default: return ((operandA * operandB).toString());
+    case '*': return ((operandA * operandB).toString());
+    default: console.log('unexpected situation Error. Please check BrainCalcCore.js');
+      return -1;
   }
 };
 
