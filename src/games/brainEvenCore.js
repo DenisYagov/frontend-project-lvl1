@@ -6,19 +6,18 @@ const maxOperandValue = 100;
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // respond function
-const respondGeneration = (operand) => {
-  if ((operand % 2) === 0) {
-    return ('yes');
-  }
-  return ('no');
-};
+const respondGeneration = (operand) => (operand % 2) === 0;
 
 const taskAndRespondEvenGameGeneration = () => {
-  const taskAndRespond = [];
   const operandA = getRandomNumber(0, maxOperandValue);
-  taskAndRespond.push(operandA.toString());
-  taskAndRespond.push(respondGeneration(operandA));
-  return taskAndRespond;
+  const task = operandA.toString();
+  let rightRespond; // respond variable
+  if (respondGeneration(operandA)) {
+    rightRespond = 'yes';
+  } else {
+    rightRespond = 'no';
+  }
+  return [task, rightRespond];
 };
 
 const playEvenGame = () => {

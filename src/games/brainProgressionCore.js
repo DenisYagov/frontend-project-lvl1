@@ -7,37 +7,33 @@ const maxLen = 10; // maximum progression value
 const minLen = 5; // minimum progression value
 const rule = 'What number is missing in the progression?';
 
-const progressionGeneration = (lenProgression) => {
+const progressionGeneration = () => {
   const progression = [];
   // random parameters of progression generation
   const startProgression = getRandomNumber(0, maxStart);
   const addProgression = getRandomNumber(0, maxAdd);
+  // length of progeression random generation
+  const lenProgression = getRandomNumber(minLen, maxLen);
   for (let i = 0; i < lenProgression; i += 1) {
-    progression.push((startProgression + i * addProgression).toString());
+    progression.push(startProgression + i * addProgression);
   }
   return progression;
 };
 
-const taskAndRespondCalcGameGeneration = () => {
-  const taskAndRespond = [];
-  // length of progeression random generation
-  const lenProgression = getRandomNumber(minLen, maxLen);
-  // random position of hidden item in array generation
-  const hiddenItemPosition = getRandomNumber(0, lenProgression);
+const taskAndRespondProgressinGameGeneration = () => {
   // progression generation
-  const progression = progressionGeneration(lenProgression);
+  const progression = progressionGeneration();
+  // random position of hidden item in array generation
+  const hiddenItemPosition = getRandomNumber(0, progression.length);
   // hidden value resceiving and replacing by special symbol
-  const hiddenValue = progression[hiddenItemPosition];
+  const rightRespond = progression[hiddenItemPosition].toString();
   progression[hiddenItemPosition] = '..';
-  // function output array preparations
-  // taskAndRespond.push(progression.toString().replace(/,/g, ' '));
-  taskAndRespond.push(progression.join(' '));
-  taskAndRespond.push(hiddenValue);
-  return taskAndRespond;
+  const task = progression.join(' ');
+  return [task, rightRespond];
 };
 
 const playProgressionGame = () => {
-  gameProcess(taskAndRespondCalcGameGeneration, rule);
+  gameProcess(taskAndRespondProgressinGameGeneration, rule);
 };
 
 export default playProgressionGame;
