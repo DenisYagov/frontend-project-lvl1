@@ -10,11 +10,11 @@ const respondValueCalculation = (operandA, opType, operandB) => {
   // respond value string:
   switch (opType) {
     case '+':
-      return ((operandA + operandB).toString());
+      return ((operandA + operandB));
     case '-':
-      return ((operandA - operandB).toString());
+      return ((operandA - operandB));
     case '*':
-      return ((operandA * operandB).toString());
+      return ((operandA * operandB));
     default: throw new Error('unexpected situation Error. Please check BrainCalcCore.js');
   }
 };
@@ -30,7 +30,7 @@ const taskAndRespondCalcGameGeneration = () => {
   const task = `${operandA} ${operationType[op]} ${operandB}`;
   // respond value string:
   const rightRespond = respondValueCalculation(operandA, operationType[op], operandB);
-  return [task, rightRespond];
+  return [task, rightRespond.toString()];
 };
 
 const playCalcGame = () => {
