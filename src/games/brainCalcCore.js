@@ -15,7 +15,7 @@ const respondValueCalculation = (operandA, opType, operandB) => {
       return ((operandA - operandB));
     case '*':
       return ((operandA * operandB));
-    default: throw new Error('unexpected situation Error. Please check BrainCalcCore.js');
+    default: throw new Error('unexpected situation Error. Incoming type of operation is out of range');
   }
 };
 
