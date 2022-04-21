@@ -2,8 +2,7 @@ import gameProcess from '../gameProcessor.js';
 import getRandomNumber from '../utils.js';
 
 const maxOperandValue = 10; // maximum operand value
-const operationType = ['+', '-', '*']; // operation values that correspond to operation number
-const maxOperation = operationType.length; // operation type nomber
+const operationTypes = ['+', '-', '*']; // operation values that correspond to operation number
 const rule = 'What is the result of the expression?';
 
 const respondValueCalculation = (operandA, opType, operandB) => {
@@ -24,12 +23,12 @@ const taskAndRespondCalcGameGeneration = () => {
   const operandA = getRandomNumber(0, maxOperandValue);
   const operandB = getRandomNumber(0, maxOperandValue);
   // operation between operands random generation
-  const op = getRandomNumber(0, maxOperation - 1);
+  const op = getRandomNumber(0, operationTypes.length - 1);
   // function output preparation
   // task value string:
-  const task = `${operandA} ${operationType[op]} ${operandB}`;
+  const task = `${operandA} ${operationTypes[op]} ${operandB}`;
   // respond value string:
-  const rightRespond = respondValueCalculation(operandA, operationType[op], operandB);
+  const rightRespond = respondValueCalculation(operandA, operationTypes[op], operandB);
   return [task, rightRespond.toString()];
 };
 
