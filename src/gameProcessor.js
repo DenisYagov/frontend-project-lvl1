@@ -26,5 +26,5 @@ const gameProcess = (taskGeneration, rule) => {
   // final dialog, if player wins
   console.log(`Congratulations, ${userName}!`);
 };
-
+ 
 export default gameProcess;
